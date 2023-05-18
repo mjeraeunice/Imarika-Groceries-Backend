@@ -1,29 +1,13 @@
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-class Customer:
-    def __init__(self, name, email):
-        self.name = name
-        self.email = email
-
-class Order:
-    def __init__(self, customer, products):
-        self.customer = customer
-        self.products = products
-
-    def calculate_total(self):
-        total = 0
-        for product in self.products:
-            total += product.price
-        return total
-
 class CustomerService:
-    def __init__(self):
-        self.orders = []
+    def __init__(self,phone_number,email):
+        self.phone_number = phone_number
+        
+        def contact_us(self, section):
+            if section =='phone': 
+                print(f'Kindly reach out {self.phone_number} for any support')
 
-    def place_order(self, customer, products):
-        order = Order(customer, products)
-        self.orders.append(order)
-        return order
+            elif section =='email':
+                print(f'Kindly your email to {self.email} for any support')
+
+            else:
+                print('You selected an invalid section')
