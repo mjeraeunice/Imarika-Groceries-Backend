@@ -5,13 +5,11 @@ class Category:
         self.products = []
     def add_product(self, product):
         self.products.append(product)
+        return f"{name} was added into the category"
     def remove_product(self, product):
         if product in self.products:
             self.products.remove(product)
+            return f"{name} is removed from the category"
     def update_description(self, new_description):
         self.description = new_description
-class Product:
-    def __init__(self, name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+        return f"{name} description was updated"
