@@ -1,18 +1,25 @@
 class User:
-    def __init__(self):
-        self.users = {}
+    def __init__(self, user_type, username, password,email):
+        self.user_type = user_type
+        self.username = username
+        self.password=password
+        self.email = email
+    
+    def register(self):
+        self.user_type = input("Enter user type (seller or customer): ")
+        self.username = input("Enter username: ")
+        self.password = input("Enter password: ")
+        self.email = input("Enter email: ")
 
-    def login(self, username, password):
-        if username not in self.users:
-            print("The Username entered does not exist.")
-        elif self.users[username] != password:
-            print("Incorrect password.")
+        new_user = User(self.user_type,self.username, self.password, self.email)
+        return new_user
+    
+    def login(self):
+        username_input = input("Enter username: ")
+        password_input = input("Enter password: ")
+        
+        if username_input == self.username and password_input == self.password:
+            print("Login successful!")
         else:
-            print("Login was successful.")
+            print("Invalid username or password.")
 
-    def register(self, username, password):
-        if username in self.users:
-            print("Username already exists.")
-        else:
-            self.users[username] = password
-            print("Registration process was successful.")
