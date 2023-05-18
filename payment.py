@@ -1,11 +1,11 @@
 class Payment:
     def __init__(self):
         self.ordering = []
-    def make_payment(self, customer, total):
-        if customer.balance < total:
-            return "Your accunt balance is insufficient"
+
+    def make_payment(self, customer, total, balance):
+        if balance < total:
+            return "Insufficient balance"
         else:
-            customer.balance -= total
-            order = Order(customer, total)
-            self.ordering.append(order)
-            return "Your Transaction was successful"
+            balance -= total
+            self.ordering.append((customer, total))
+            return "Transaction successful"
