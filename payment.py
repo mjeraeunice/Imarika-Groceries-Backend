@@ -1,7 +1,3 @@
-class Order:
-    def __init__(self, customer, total):
-        self.customer = customer
-        self.total = total
 class Payment:
     def __init__(self):
         self.ordering = []
