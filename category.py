@@ -10,8 +10,3 @@ class Category:
             self.products.remove(product)
     def update_description(self, new_description):
         self.description = new_description
-class Product:
-    def __init__(self, name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
