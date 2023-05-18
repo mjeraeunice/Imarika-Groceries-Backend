@@ -1,13 +1,18 @@
-class Customer:
-    def __init__(self, name, email,password,confirmation):
-        self.name = name
-        self.email = email
-        self.password = password
-        self.confirmation = confirmation
-class Registrer:
+class User:
     def __init__(self):
-        self.customer = []
-    def register(self, name, email, password,confirmation):
-        new_customer = Customer(name, email, password,confirmation)
-        self.customer.append(new_customer)
-        return f"Hi {name},Thank you for choosing Imarika Groceries"
+        self.users = {}
+
+    def login(self, username, password):
+        if username not in self.users:
+            print("The Username entered does not exist.")
+        elif self.users[username] != password:
+            print("Incorrect password.")
+        else:
+            print("Login was successful.")
+
+    def register(self, username, password):
+        if username in self.users:
+            print("Username already exists.")
+        else:
+            self.users[username] = password
+            print("Registration process was successful.")
