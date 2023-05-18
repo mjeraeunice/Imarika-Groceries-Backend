@@ -13,3 +13,4 @@ class Category:
     def update_description(self, new_description):
         self.description = new_description
         return f"{name} description was updated"
+
