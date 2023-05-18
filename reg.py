@@ -19,7 +19,7 @@ class User:
         password_input = input("Enter password: ")
         
         if username_input == self.username and password_input == self.password:
-            print("Login successful!")
+            print("Login was successful!")
         else:
             print("Invalid username or password.")
 
